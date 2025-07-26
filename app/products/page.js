@@ -145,7 +145,7 @@ const productsPage = () => {
                                             {isinwishlist ? (
                                                 <AiFillHeart className="text-amber-700 cursor-pointer" size={22} />
                                             ) : (
-                                                <AiOutlineHeart className="text-black" size={22} />
+                                                <AiOutlineHeart className="text-black cursor-pointer" size={22} />
                                             )}
                                         </button>
                                     </div>

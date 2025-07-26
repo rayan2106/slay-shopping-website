@@ -19,17 +19,20 @@ export async function GET(req){
     }
     
 
-    if(user.cart == []){
+    if(!user.cart || user.cart.length === 0){
         return NextResponse.json({message: "nothing inside cart"}, {status: 404})
     }
     const productids = user.cart.map(i => i.productId)
     const products = await Products.find({_id: {$in : productids}}).lean()
-    
+    console.log(productids)
+    console.log(products)
     const cartproducts = user.cart.map(item => {
        const product = products.find(prod => prod._id.toString() === item.productId.toString())
+       console.log(item.toObject())
+       console.log(product)
         return{
             ...item.toObject(),
-            product
+            product,
         }
     })
 

@@ -44,10 +44,11 @@ export default async function idPage({ params }) {
 
                         {/* BUTTONS */}
                         <div className="flex gap-4 mt-6">
-                            <Helpercomp product={product} />
+                            <Helpercomp productId={product._id.toString()} />
                             <button className="bg-white text-black hover:bg-gray-200 transition px-6 py-3 font-semibold rounded-full">
                                 Buy Now ⚡
                             </button>
+                            
                         </div>
 
                         {/* Back to all products */}
